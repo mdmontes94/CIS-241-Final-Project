@@ -1,4 +1,5 @@
 <?php
+
 function getConnection() {
     $dataURL = 'mysql:host=localhost;dbname=music_site';
     $user = 'AHon209';
