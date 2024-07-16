@@ -21,6 +21,17 @@ class SongModel {
         return $allSongs;
     }
 
+    public function getSongList() {
+        $querySongList = 'SELECT *
+                          FROM songs_view';
+        $statement = $this->conn->prepare($querySongList);
+        $statement->execute();
+        $songList = $statement->fetchAll();
+        $statement->closeCursor();
+
+        return $songList;
+    }
+
 }
 
 ?>
