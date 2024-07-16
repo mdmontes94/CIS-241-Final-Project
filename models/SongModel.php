@@ -10,7 +10,7 @@ class SongModel {
         $this->conn = getConnection(); // Assumes getConnection() function from database.php
     }
 
-    public function getAllSongs () {
+    public function getAllSongs() {
         $querySongs = 'SELECT *
                        FROM songs';
         $statement = $this->conn->prepare($querySongs);
@@ -20,7 +20,7 @@ class SongModel {
 
         return $allSongs;
     }
-    
+
 }
 
 ?>

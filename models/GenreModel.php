@@ -10,7 +10,7 @@ class GenreModel {
         $this->conn = getConnection(); // Assumes getConnection() function from database.php
     }
 
-    public function getAllGenres () {
+    public function getAllGenres() {
         $queryGenres = 'SELECT *
                        FROM genres';
         $statement = $this->conn->prepare($queryGenres);

@@ -10,7 +10,7 @@ class ArtistModel {
         $this->conn = getConnection(); // Assumes getConnection() function from database.php
     }
 
-    public function getAllArtists () {
+    public function getAllArtists() {
         $queryArtists = 'SELECT *
                        FROM artists';
         $statement = $this->conn->prepare($queryArtists);

@@ -10,7 +10,7 @@ class AlbumModel {
         $this->conn = getConnection(); // Assumes getConnection() function from database.php
     }
 
-    public function getAllAlbums () {
+    public function getAllAlbums() {
         $queryAlbums = 'SELECT *
                        FROM albums';
         $statement = $this->conn->prepare($querySongs);
