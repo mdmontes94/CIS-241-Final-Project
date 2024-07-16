@@ -9,7 +9,18 @@ class GenreModel {
     public function __construct() {
         $this->conn = getConnection(); // Assumes getConnection() function from database.php
     }
-    
+
+    public function getAllGenres () {
+        $queryGenres = 'SELECT *
+                       FROM genres';
+        $statement = $this->conn->prepare($queryGenres);
+        $statement->execute();
+        $allGenres = $statement->fetchAll();
+        $statement->closeCursor();
+
+        return $allGenres;
+    }
+
 }
 
 ?>
