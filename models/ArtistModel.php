@@ -12,7 +12,8 @@ class ArtistModel {
 
     public function getAllArtists() {
         $queryArtists = 'SELECT *
-                         FROM artists';
+                         FROM artists
+                         ORDER BY artist_name';
         $statement = $this->conn->prepare($queryArtists);
         $statement->execute();
         $allArtists = $statement->fetchAll();

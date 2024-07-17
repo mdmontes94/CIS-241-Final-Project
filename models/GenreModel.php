@@ -12,7 +12,8 @@ class GenreModel {
 
     public function getAllGenres() {
         $queryGenres = 'SELECT *
-                       FROM genres';
+                       FROM genres
+                       ORDER BY genre_name';
         $statement = $this->conn->prepare($queryGenres);
         $statement->execute();
         $allGenres = $statement->fetchAll();

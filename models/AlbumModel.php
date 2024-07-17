@@ -12,7 +12,8 @@ class AlbumModel {
 
     public function getAllAlbums() {
         $queryAlbums = 'SELECT *
-                       FROM albums';
+                       FROM albums
+                       ORDER BY album_title';
         $statement = $this->conn->prepare($queryAlbums);
         $statement->execute();
         $allAlbums = $statement->fetchAll();
