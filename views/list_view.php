@@ -12,7 +12,21 @@
     <body>
         <div class="container">
             <div class ="sub-container">
-                
+                <select>
+                    <?php foreach($artists as $artist) : ?>
+                    <option><?php echo $artist['artist_name']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <select>
+                    <?php foreach($albums as $album) : ?>
+                    <option><?php echo $album['album_title']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <select>
+                    <?php foreach($genres as $genre) : ?>
+                    <option><?php echo $genre['genre_name']; ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="sub-container">
                 <table class="songs">

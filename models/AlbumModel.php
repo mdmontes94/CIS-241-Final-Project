@@ -13,7 +13,7 @@ class AlbumModel {
     public function getAllAlbums() {
         $queryAlbums = 'SELECT *
                        FROM albums';
-        $statement = $this->conn->prepare($querySongs);
+        $statement = $this->conn->prepare($queryAlbums);
         $statement->execute();
         $allAlbums = $statement->fetchAll();
         $statement->closeCursor();

@@ -12,7 +12,7 @@ class ArtistModel {
 
     public function getAllArtists() {
         $queryArtists = 'SELECT *
-                       FROM artists';
+                         FROM artists';
         $statement = $this->conn->prepare($queryArtists);
         $statement->execute();
         $allArtists = $statement->fetchAll();

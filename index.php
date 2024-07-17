@@ -19,8 +19,14 @@ switch ($action) {
     
     case 'list':
         require_once('controllers/SongController.php');
-        $controller = new SongController($songModel);
-        $controller->getSongList();
+        $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
+
+        $songList = $controller->getSongList();
+        $artists = $controller->getAllArtists();
+        $albums = $controller->getAllAlbums();
+        $genres = $controller->getAllGenres();
+
+        include('views/list_view.php');
         break;
 
     default:
