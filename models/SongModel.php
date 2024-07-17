@@ -23,7 +23,8 @@ class SongModel {
 
     public function getSongList() {
         $querySongList = 'SELECT *
-                          FROM songs_view';
+                          FROM songs_view
+                          ORDER BY artist_name';
         $statement = $this->conn->prepare($querySongList);
         $statement->execute();
         $songList = $statement->fetchAll();
