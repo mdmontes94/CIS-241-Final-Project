@@ -10,17 +10,17 @@ class ArtistController {
     }
 
     public function addArtist() {
-        
         $artist_name = filter_input(INPUT_POST, 'artist_name');
         $success = $this->artistModel->addArtist($artist_name);
         
         if ($success) {
-            footer("Successfully added artist to database!");
+            header("Location: index.php?action=add_artist&status=success");
+            exit;
         } 
         else {
-            echo "Error adding artist.";
+            header("Location: index.php?action=add_artist&status=error");
+            exit;
         }
-        exit; 
     }
 }
 

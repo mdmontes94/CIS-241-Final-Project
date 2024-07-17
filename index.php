@@ -30,6 +30,9 @@ switch ($action) {
         break;
 
     case 'artist_view':
+        require_once('controllers/SongController.php');
+        $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
+        
         include('views/artist_view.php');
         break;
 
@@ -44,14 +47,24 @@ switch ($action) {
         require_once('controllers/SongController.php');
         $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
 
-        include('views/add_song.php');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->addSong();
+        } 
+        else {
+            include('views/add_song.php');
+        }
         break;
 
     case 'add_artist':
         require_once('controllers/ArtistController.php');
         $controller = new ArtistController($artistModel);
 
-        include('views/add_artist.php');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->addArtist();
+        } 
+        else {
+            include('views/add_artist.php');
+        }
         break;
     default:
         # code...
