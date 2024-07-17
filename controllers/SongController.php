@@ -8,6 +8,14 @@ class SongController {
     public function __construct(SongModel $songModel) {
         $this->songModel = $songModel;
     }
+
+    public function getAllSongs() {
+       $songs = $this->songModel->getAllSongs(); 
+    }
+
+    public function getSongList() {
+        $songList = $this->songModel->getSongList();
+    }
 }
 
 ?>
