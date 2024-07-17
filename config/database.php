@@ -1,7 +1,7 @@
 <?php
 
 function getConnection() {
-    $dataURL = 'mysql:host=localhost;dbname=music_site';
+    $dataURL = 'mysql:host=localhost;dbname=music_site;charset=utf8';
     $user = 'AHon209';
     $pass = '5outh3ast';
 
