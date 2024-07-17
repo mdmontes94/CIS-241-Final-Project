@@ -15,6 +15,8 @@ class SongController {
 
     public function getSongList() {
         $songList = $this->songModel->getSongList();
+
+        include('views/list_view.php');
     }
 }
 
