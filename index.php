@@ -1,5 +1,7 @@
 <?php
 
+require_once('./models/SongModel.php');
+
 $action = $_GET['action'] ?? 'main_page';
 
 switch ($action) {
