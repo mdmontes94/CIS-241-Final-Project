@@ -2,7 +2,7 @@
 
 require_once('./models/ArtistModel.php');
 
-class AlbumController {
+class ArtistController {
     private $artistModel;
 
     public function __construct(ArtistModel $artistModel) {

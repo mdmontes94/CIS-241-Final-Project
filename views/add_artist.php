@@ -18,5 +18,15 @@
             <a href="index.php?action=add_song">Add Song</a>
             <a href="index.php?action=add_artist"><b>Add Artist</b></a>  
         </nav>
+        <div class="container">
+            <div class = sub-container">
+                <form>
+                    <label>Artist to Add:</label>
+                    <input type="text" name="artist_name" id="artist_name" />
+                    <br>
+                    <button type="submit">Add Artist</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
