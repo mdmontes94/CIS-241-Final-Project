@@ -10,7 +10,7 @@ $artistModel = new ArtistModel();
 $genreModel = new GenreModel();
 $songModel = new SongModel();
 
-$action = $_GET['action'] ?? 'main_page';
+$action = $_GET['action'] ?? 'home_page';
 
 switch ($action) {
     case 'home_page':
@@ -29,6 +29,26 @@ switch ($action) {
         include('views/list_view.php');
         break;
 
+    case 'artist_view':
+        include('views/artist_view.php');
+        break;
+
+    case 'song_view':
+        require_once('controllers/SongController.php');
+        $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
+        
+        include('views/song_view.php');
+        break;
+
+    case 'add_song':
+        require_once('controllers/SongController.php');
+        $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
+
+        include('views/add_song.php');
+        break;
+
+    case 'add_artist':
+        include('views/add_artist.php');
     default:
         # code...
         break;
