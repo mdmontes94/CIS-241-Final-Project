@@ -9,6 +9,15 @@
         <script src="./assets/filterList.js"></script>
     </head>
     <body>
+        <nav class="navMenu">
+            <a href="index.php">Home Page</a>
+            <a href="index.php?action=list">Song List</a>
+            <a href="index.php?action=artist_view">Artist View</a>
+            <a href="index.php?action=song_view">Song View</a>
+            <a href="index.php?action=add_song"><b>Add Song</b></a>
+            <a href="index.php?action=add_artist">Add Artist</a>
+            
+        </nav>
         <div class="container">
             <div class="sub-container">
                 <h1>Filter Options</h1>
@@ -55,8 +64,6 @@
                             <th>Artist</th>
                             <th>Album</th>
                             <th>Genre</th>
-                            <th>Length</th>
-                            <th>Year Released</th>
                         </tr>
                     </thead>
                     <tbody id="songTableBody">
@@ -66,8 +73,6 @@
                             <td><?php echo $song['artist_name']; ?></td>
                             <td><?php echo $song['album_title']; ?></td>
                             <td><?php echo $song['genre_name']; ?></td>
-                            <td><?php echo $song['length']; ?></td>
-                            <td><?php echo $song['year_released']; ?></td> 
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
