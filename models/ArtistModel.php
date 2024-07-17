@@ -22,6 +22,19 @@ class ArtistModel {
         return $allArtists;
     }
 
+    public function addArtist($artist_name) {
+        if ($artist_name !== false) {
+            $query = 'INSERT INTO artists (artist_name)
+                      VALUES (:artist_name)';
+            $statement = $this->conn->prepare($query);
+            $statement->bindValue(':artist_name', $artist_name);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
 }
 
 ?>

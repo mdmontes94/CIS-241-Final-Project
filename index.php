@@ -36,7 +36,7 @@ switch ($action) {
     case 'song_view':
         require_once('controllers/SongController.php');
         $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
-        
+
         include('views/song_view.php');
         break;
 
@@ -48,7 +48,11 @@ switch ($action) {
         break;
 
     case 'add_artist':
+        require_once('controllers/ArtistController.php');
+        $controller = new ArtistController($artistModel);
+
         include('views/add_artist.php');
+        break;
     default:
         # code...
         break;
