@@ -77,10 +77,24 @@ class SongModel {
             $statement->bindValue(':genre_id', $genre_id); 
             $statement->bindValue(':length', $length);
             $statement->bindValue(':year_released', $year_released);
-            $success = $statement->closeCursor();
+            $success = $statement->execute();
+            $statement->closeCursor();
             
             return $success;
         }
+    }
+
+    public function getSongByID($song_id) {
+        $idQuery = 'SELECT *
+                    FROM songs_view
+                    WHERE song_id = :song_id';
+        $statement = $this->conn->prepare($idQuery);
+        $statement->bindValue(':song_id', $song_id);
+        $statement->execute();
+        $success = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $success;
     }
 
 }

@@ -15,8 +15,7 @@
             <a href="index.php?action=artist_view">Artist View</a>
             <a href="index.php?action=song_view">Song View</a>
             <a href="index.php?action=add_song"><b>Add Song</b></a>
-            <a href="index.php?action=add_artist">Add Artist</a>
-            
+            <a href="index.php?action=add_artist">Add Artist</a>          
         </nav>
         <div class="container">
             <div class="sub-container">
@@ -69,7 +68,7 @@
                     <tbody id="songTableBody">
                         <?php foreach ($songList as $song) : ?>
                         <tr>
-                            <td><?php echo $song['song_title']; ?></td>
+                            <td><a href="index.php?action=song_view&song_id=<?php echo $song['song_id']; ?>"><?php echo $song['song_title']; ?></a></td>
                             <td><?php echo $song['artist_name']; ?></td>
                             <td><?php echo $song['album_title']; ?></td>
                             <td><?php echo $song['genre_name']; ?></td>

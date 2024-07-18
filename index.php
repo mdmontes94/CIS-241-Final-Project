@@ -39,7 +39,12 @@ switch ($action) {
     case 'song_view':
         require_once('controllers/SongController.php');
         $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
+        $song_id = $_GET['song_id'] ?? '';
 
+        if ($song_id) {
+            $songDetails = $controller->getSongById($song_id);
+        }
+    
         include('views/song_view.php');
         break;
 
