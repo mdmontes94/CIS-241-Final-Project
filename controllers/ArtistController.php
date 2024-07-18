@@ -9,6 +9,12 @@ class ArtistController {
         $this->artistModel = $artistModel;
     }
 
+    public function getAllArtists() {
+        $artists = $this->artistModel->getAllArtists();
+
+        return $artists;
+    }
+
     public function addArtist() {
         $artist_name = filter_input(INPUT_POST, 'artist_name');
         $success = $this->artistModel->addArtist($artist_name);

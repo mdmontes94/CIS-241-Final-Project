@@ -20,6 +20,8 @@ class SongController {
 
     public function getAllSongs() {
        $songs = $this->songModel->getAllSongs(); 
+
+       return $songs;
     }
 
     public function getSongList() {
