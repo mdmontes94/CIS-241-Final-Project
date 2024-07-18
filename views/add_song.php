@@ -26,6 +26,7 @@
             <form action="index.php?action=add_song" method="post">
                 <labe for="song_title">Song to Add:</label>
                 <input type="text" name="song_title" id="song_title" required />
+                <br>
                 
                 <label for="artist_id">Artist:</label>
                 <select id="artist_id" name="artist_id" required>
@@ -34,7 +35,8 @@
                         <option value="<?php echo $artist['artist_id']; ?>"><?php echo $artist['artist_name']; ?></option>
                     <?php endforeach; ?>
                 </select>
-                
+                <br>
+
                 <label for="album_id">Album:</label>
                 <select id="album_id" name="album_id">
                     <option value="" selected>Select Album</option>
@@ -42,6 +44,7 @@
                         <option value="<?php echo $album['album_id']; ?>"><?php echo $album['album_title']; ?></option>
                     <?php endforeach; ?>
                 </select>
+                <br>
                 
                 <label for="genre_id">Genre:</label>
                 <select id="genre_id" name="genre_id">
@@ -50,16 +53,22 @@
                         <option value="<?php echo $genre['genre_id']; ?>"><?php echo $genre['genre_name']; ?></option>
                     <?php endforeach; ?>
                 </select>
+                <br>
                 
                 <label for="length">Length:</label>
                 <input type="text" name="length" id="length" />
+                <br>
                 
                 <label for="year_released">Year Released:</label>
                 <input type="text" name="year_released" id="year_released" />
-                
                 <br>
+
                 <button type="submit">Add Song</button>
             </form>
+        </div>
+        <div class="sub-container">
+            <p>If the artist for the song you are adding is not in the list of available artists, please add them by going to the 
+            <a href="index.php?action=add_artist">Add Artist</a> page as you cannot add a song without the proper artist.</p>
         </div>
     </div>
 </body>
