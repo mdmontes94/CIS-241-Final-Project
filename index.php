@@ -47,6 +47,10 @@ switch ($action) {
         require_once('controllers/SongController.php');
         $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
 
+        $artists = $controller->getAllArtists();
+        $albums = $controller->getAllAlbums();
+        $genres = $controller->getAllGenres();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->addSong();
         } 
