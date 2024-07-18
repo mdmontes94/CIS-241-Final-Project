@@ -24,7 +24,7 @@
                 <?php endif; ?>
             <?php endif; ?>
             <form action="index.php?action=add_artist" method="post">
-                <label>Artist to Add:</label>
+                <label for="artist_name">Artist to Add:</label>
                 <input type="text" name="artist_name" id="artist_name" required />
                 <br>
                 <button type="submit">Add Artist</button>
