@@ -35,6 +35,34 @@ class GenreModel {
         }
     }
 
+    public function deleteGenre($genre_id) {
+        if($genre_id !== false) {
+            $deleteQuery = 'DELETE FROM genres
+                            WHERE genre_id = :genre_id';
+            $statement = $this->conn->prepare($deleteQuery);
+            $statement->bindValue(':genre_id', $genre_id);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
+    public function updateGenre($genre_id, $genre_name) {
+        if($genre_id !== false && $genre_name !== false) {
+            $updateQuery = 'UPDATE genres
+                            SET genre_name = :genre_name
+                            WHERE genre_id = :genre_id';
+            $statement = $this->conn->prepare($updateQuery);
+            $statement->bindValue(':genre_name', $genre_name);
+            $statement->bindValue(':genre_id', $genre_id);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
 }
 
 ?>
