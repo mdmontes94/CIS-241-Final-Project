@@ -35,6 +35,34 @@ class ArtistModel {
         }
     }
 
+    public function deleteArtist($artist_id) {
+        if($artist_id !== false) {
+            $deleteQuery = 'DELETE FROM artists
+                            WHERE artist_id = :artist_id';
+            $statement = $this->conn->prepare($deleteQuery);
+            $statement->bindValue(':artist_id', $artist_id);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
+    public function updateArtist($artist_id, $artist_name) {
+        if($artist_id !== false && $artist_name !== false) {
+            $updateQuery = 'UPDATE artists
+                            SET artist_name = :artist_name
+                            WHERE artist_id = :artist_id';
+            $statement = $this->conn->prepare($updateQuery);
+            $statement->bindValue(':artist_name', $artist_name);
+            $statement->bindValue(':artist_id', $artist_id);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
 }
 
 ?>
