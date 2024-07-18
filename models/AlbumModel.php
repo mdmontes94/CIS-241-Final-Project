@@ -22,6 +22,19 @@ class AlbumModel {
         return $allAlbums;
     }
 
+    public function addAlbum($album_name) {
+        if ($album_name !== false) {
+            $query = 'INSERT INTO albums (album_name)
+                      VALUES (:album_name)';
+            $statement = $this->conn->prepare($query);
+            $statement->bindValue(':album_name', $album_name);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
 }
 
 ?>

@@ -22,6 +22,19 @@ class GenreModel {
         return $allGenres;
     }
 
+    public function addGenre($genre_name) {
+        if ($genre_name !== false) {
+            $query = 'INSERT INTO genres (genre_name)
+                      VALUES (:genre_name)';
+            $statement = $this->conn->prepare($query);
+            $statement->bindValue(':genre_name', $genre_name);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
 }
 
 ?>
