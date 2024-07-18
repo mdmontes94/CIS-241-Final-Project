@@ -22,12 +22,40 @@ class AlbumModel {
         return $allAlbums;
     }
 
-    public function addAlbum($album_name) {
+    public function addAlbum($album_title) {
         if ($album_name !== false) {
-            $query = 'INSERT INTO albums (album_name)
-                      VALUES (:album_name)';
+            $query = 'INSERT INTO albums (album_title)
+                      VALUES (:album_title)';
             $statement = $this->conn->prepare($query);
-            $statement->bindValue(':album_name', $album_name);
+            $statement->bindValue(':album_title', $album_title);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
+    public function deleteAlbum($album_id) {
+        if($album_id !== false) {
+            $deleteQuery = 'DELETE FROM albums
+                            WHERE album_id = :album_id';
+            $statement = $this->conn->prepare($deleteQuery);
+            $statement->bindValue(':album_id', $album_id);
+            $success = $statement->execute();
+            $statement->closeCursor();
+
+            return $success;
+        }
+    }
+
+    public function updateAlbum($album_id, $album_title) {
+        if($album_id !== false && $album_title !== false) {
+            $updateQuery = 'UPDATE albums
+                            SET album_title = :album_title
+                            WHERE album_id = :album_id';
+            $statement = $this->conn->prepare($updateQuery);
+            $statement->bindValue(':album_title', $album_title);
+            $statement->bindValue(':album_id', $album_id);
             $success = $statement->execute();
             $statement->closeCursor();
 
