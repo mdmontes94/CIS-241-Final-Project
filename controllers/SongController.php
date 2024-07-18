@@ -45,6 +45,25 @@ class SongController {
 
         return $genres; 
     }
+
+    public function addSong() {
+        $song_title = filter_input(INPUT_POST, 'song_title');
+        $artist_id = filter_input(INPUT_POST, 'artist_id', FILTER_VALIDATE_INT);
+        $album_id = filter_input(INPUT_POST, 'album_id', FILTER_VALIDATE_INT);
+        $genre_id = filter_input(INPUT_POST, 'genre_id', FILTER_VALIDATE_INT);
+        $length = filter_input(INPUT_POST, 'length');
+        $year_released = filter_input(INPUT_POST, 'year_released', FILTER_VALIDATE_INT);
+        $success = $this->songModel->addSong($song_title, $artist_id, $album_id, $genre_id, $length, $year_released);
+        
+        if ($success) {
+            header("Location: index.php?action=add_song&status=success");
+            exit;
+        } 
+        else {
+            header("Location: index.php?action=add_song&status=error");
+            exit;
+        }
+    }
 }
 
 ?>
