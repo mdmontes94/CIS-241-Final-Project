@@ -15,7 +15,9 @@
         </nav>
         <div class="container">
             <h1>It's a Mario's Music Manager!</h1>
-            
+            <img id="conductor" src="./assets/mario_conductor.png" alt="Mario conducting" />
+            <img id="sax" src="./assets/mario_sax.png" alt="Mario playing saxophone" />
+            <img id="keyboard" src="./assets/musical_mario.png" alt="Mario playing keyboard" />
         </div>
     </body>
 </html>
