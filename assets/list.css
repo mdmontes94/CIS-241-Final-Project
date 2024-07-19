@@ -49,7 +49,7 @@ body {
 .songs {
     border: 8px solid #0065B3;
     border-collapse: collapse;
-    width: 95%;
+    width: 75%;
     margin: auto;
 }
 

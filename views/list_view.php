@@ -58,18 +58,12 @@
                     <thead>
                         <tr>
                             <th>Song Title</th>
-                            <th>Artist</th>
-                            <th>Album</th>
-                            <th>Genre</th>
                         </tr>
                     </thead>
                     <tbody id="songTableBody">
                         <?php foreach ($songList as $song) : ?>
                         <tr>
                             <td><a href="index.php?action=song_view&song_id=<?php echo $song['song_id']; ?>"><?php echo $song['song_title']; ?></a></td>
-                            <td><?php echo $song['artist_name']; ?></td>
-                            <td><?php echo $song['album_title']; ?></td>
-                            <td><?php echo $song['genre_name']; ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
