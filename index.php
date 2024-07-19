@@ -30,8 +30,15 @@ switch ($action) {
         break;
 
     case 'artist_view':
-        require_once('controllers/SongController.php');
-        $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);
+        require_once('controllers/ArtistController.php');
+        $controller = new ArtistController($artistModel);
+        $artist_id = $_GET['artist_id'] ?? '';
+
+        if($artist_id) {
+            $artist = $controller->getSpecifiedArtist($artist_id);
+            $songs = $controller->getSongsByArtist($artist_id);
+            $albums = $controller->getAlbumsByArtist($artist_id);
+        }
         
         include('views/artist_view.php');
         break;
@@ -42,7 +49,7 @@ switch ($action) {
         $song_id = $_GET['song_id'] ?? '';
 
         if ($song_id) {
-            $songDetails = $controller->getSongById($song_id);
+            $songDetails = $controller->getSongByID($song_id);
         }
     
         include('views/song_view.php');

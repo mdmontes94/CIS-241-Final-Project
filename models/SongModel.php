@@ -96,7 +96,6 @@ class SongModel {
 
         return $success;
     }
-
 }
 
 ?>

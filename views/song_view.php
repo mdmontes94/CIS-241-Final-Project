@@ -17,7 +17,7 @@
         <div class="container">
             <?php if ($songDetails): ?>
                 <h1>Song: <?php echo htmlspecialchars($songDetails['song_title']); ?></h1>
-                <p><strong>Artist:</strong> <?php echo htmlspecialchars($songDetails['artist_name']); ?></p>
+                <p><strong>Artist:</strong> <a href="index.php?action=artist_view&artist_id=<?php echo $songDetails['artist_id']; ?>"><?php echo htmlspecialchars($songDetails['artist_name']); ?></a></p>
                 <p><strong>Album:</strong> <?php echo htmlspecialchars($songDetails['album_title']); ?></p>
                 <p><strong>Genre:</strong> <?php echo htmlspecialchars($songDetails['genre_name']); ?></p>
                 <p><strong>Length:</strong> <?php echo htmlspecialchars($songDetails['length']); ?></p>

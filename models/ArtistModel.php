@@ -63,6 +63,43 @@ class ArtistModel {
         }
     }
 
+    public function getSongsByArtist($artist_id) {
+        $artistQuery = 'SELECT song_id, song_title
+                       FROM songs_view
+                       WHERE artist_id = :artist_id';
+        $statement = $this->conn->prepare($artistQuery);
+        $statement->bindValue(':artist_id', $artist_id);
+        $statement->execute();
+        $success = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $success;
+    }
+
+    public function getAlbumsByArtist($artist_id) {
+        $albumQuery = 'SELECT DISTINCT album_title
+                       FROM songs_view
+                       WHERE artist_id = :artist_id';
+        $statement = $this->conn->prepare($albumQuery);
+        $statement->bindValue(':artist_id', $artist_id);
+        $statement->execute();
+        $success = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $success;
+    }
+
+    public function getSpecifiedArtist($artist_id) {
+        $artistQuery = 'SELECT artist_name FROM artists WHERE artist_id = :artist_id';
+        $statement = $this->conn->prepare($artistQuery);
+        $statement->bindValue(':artist_id', $artist_id);
+        $statement->execute();
+        $success = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $success;
+    }
+
 }
 
 ?>

@@ -67,7 +67,7 @@ class SongController {
         }
     }
 
-    public function getSongById($song_id) {
+    public function getSongByID($song_id) {
         if ($song_id) {
             $song = $this->songModel->getSongById($song_id);
             return $song ? $song : false;

@@ -28,6 +28,30 @@ class ArtistController {
             exit;
         }
     }
+
+    public function getSongsByArtist($artist_id) {
+        if($artist_id) {
+            $songs = $this->artistModel->getSongsByArtist($artist_id);
+            return $songs ? $songs : false;
+        }
+        return false;
+    }
+
+    public function getAlbumsByArtist($artist_id) {
+        if($artist_id) {
+            $albums = $this->artistModel->getAlbumsByArtist($artist_id);
+            return $albums ? $albums : false;
+        }
+        return false;
+    }
+
+    public function getSpecifiedArtist($artist_id) {
+        if($artist_id) {
+            $artist = $this->artistModel->getSpecifiedArtist($artist_id);
+            return $artist ? $artist : false;
+        }
+        return false;
+    }
 }
 
 ?>
