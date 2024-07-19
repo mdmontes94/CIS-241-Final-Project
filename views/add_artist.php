@@ -14,7 +14,7 @@
         <a href="index.php?action=add_artist"><b>Add Artist</b></a>  
     </nav>
     <div class="container">
-        <div class="sub-container">
+        <div class="sub-container" id="add-artist-form">
             <?php if (isset($_GET['status'])): ?>
                 <?php if ($_GET['status'] === 'success'): ?>
                     <p style="color: green;">Successfully added artist to database!</p>

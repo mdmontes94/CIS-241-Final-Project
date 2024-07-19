@@ -4,12 +4,14 @@ require_once(__DIR__ . '/../config/database.php');
 
 class SongModel {
 
+    // Establishes a connection with the database.
     private $conn;
 
     public function __construct() {
         $this->conn = getConnection(); // Assumes getConnection() function from database.php
     }
 
+    // The following function gets all of the information of the songs table and returns that query so it can be used by the controller.
     public function getAllSongs() {
         $querySongs = 'SELECT *
                        FROM songs';
@@ -21,6 +23,8 @@ class SongModel {
         return $allSongs;
     }
 
+    // The following function get all of the information from the songs view, orders it by the song_title column
+    // and returns it for use in the controller for the list view.
     public function getSongList() {
         $querySongList = 'SELECT *
                           FROM songs_view
@@ -33,6 +37,8 @@ class SongModel {
         return $songList;
     }
 
+    // The following function adds a song to the song table, given some arguments. If the variables of song_title and artist_id
+    // are true, then the function runs the query to add a song to the database given the information that the user provides.
     public function addSong($song_title, $artist_id, $album_id, $genre_id, $length, $year_released) {
         if($song_title !== false && $artist_id !== false) {
             $query = 'INSERT INTO songs (song_title, artist_id, album_id, genre_id, length, year_released)
@@ -51,6 +57,8 @@ class SongModel {
         }
     }
 
+    // The following function deletes a song from the songs table given the argument of song_id. Once that is provided,
+    // the function will run the query to delete the song from the songs table.
     public function deleteSong($song_id) {
         if($song_id !== false) {
             $deleteQuery = 'DELETE FROM songs
@@ -64,6 +72,9 @@ class SongModel {
         }
     }
 
+    // The following function updates a song in the songs table using the same arguments as the addSong() function.
+    // However, in order to run the query, the variables of song_id. song_title and artist_id must be true, so the
+    // user can update the song information should they choose to.
     public function updateSong($song_id, $song_title, $artist_id, $album_id, $genre_id, $length, $year_released) {
         if($song_id !== false && $song_title && false && $artist_id !== false) {
             $updateQuery = 'UPDATE songs 
@@ -84,6 +95,9 @@ class SongModel {
         }
     }
 
+    // The following function runs a query when the variable of song_id is provided as an argument that returns
+    // a row from the songs_view table where the song_id variables match in order to get the specific song information
+    // for song_view.php.
     public function getSongByID($song_id) {
         $idQuery = 'SELECT *
                     FROM songs_view
