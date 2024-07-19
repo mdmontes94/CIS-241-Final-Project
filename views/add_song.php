@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Song</title>
+    <link rel="stylesheet" href="./assets/add_form.css" />
 </head>
 <body>
     <nav class="navMenu">
