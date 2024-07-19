@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Song View</title>
-        <link rel="stylesheet" href="./assets/song_view.css">
+        <link rel="stylesheet" href="./assets/view.css">
     </head>
     <body>
         <nav class="navMenu">
@@ -14,14 +14,18 @@
             <a href="index.php?action=add_artist">Add Artist</a>
         </nav>
         <div class="container">
+            <div class="sub-container">
             <?php if ($songDetails): ?>
-                <h1>Song: <?php echo htmlspecialchars($songDetails['song_title']); ?></h1>
+                <h1><?php echo htmlspecialchars($songDetails['song_title']); ?></h1>
+            </div>
+            <div class="sub-container">
                 <p><strong>Artist:</strong> <a href="index.php?action=artist_view&artist_id=<?php echo $songDetails['artist_id']; ?>"><?php echo htmlspecialchars($songDetails['artist_name']); ?></a></p>
-                <p><strong>Album:</strong> <?php echo htmlspecialchars($songDetails['album_title']); ?></p>
+                <p><strong>Album:</strong> <a href="index.php?action=album_view&album_id=<?php echo $songDetails['album_id']; ?>"><?php echo htmlspecialchars($songDetails['album_title']); ?></a></p>
                 <p><strong>Genre:</strong> <?php echo htmlspecialchars($songDetails['genre_name']); ?></p>
                 <p><strong>Length:</strong> <?php echo htmlspecialchars($songDetails['length']); ?></p>
                 <p><strong>Year Released:</strong> <?php echo htmlspecialchars($songDetails['year_released']); ?></p>
-            <?php else: ?>
+            </div>
+            <?php else: ?>            
                 <p>Song not found.</p>
             <?php endif; ?>
         </div>
