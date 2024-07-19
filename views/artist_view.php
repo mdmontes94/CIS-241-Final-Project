@@ -16,14 +16,16 @@
         <div class="container">
             <div class="sub-container">
             <?php if ($artist): ?>
-                <h1>Artist: <?php echo htmlspecialchars($artist['artist_name']); ?></h1>
+                <h1><?php echo htmlspecialchars($artist['artist_name']); ?></h1>
             </div>
+            <br><br>
             <div class="sub-container">
                 <h3>Albums</h3>
                 <?php foreach ($albums as $album) : ?>
                     <p><a href="index.php?action=album_view&album_id=<?php echo $album['album_id']; ?>"><?php echo htmlspecialchars($album['album_title']); ?></a></p>
                 <?php endforeach; ?>
             </div>
+            <br>
             <div class="sub-container">
                 <h3>Songs</h3>
                 <?php foreach ($songs as $song) : ?>

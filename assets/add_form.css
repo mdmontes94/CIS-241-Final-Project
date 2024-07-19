@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color:  #FED1B0;
     margin: 0;
     padding: 0;
     color: #333;
@@ -47,7 +47,7 @@ body {
 }
 
 .songs {
-    border: 8px solid navy;
+    border: 8px #894C2F;
     border-collapse: collapse;
     width: 95%;
     margin: auto;

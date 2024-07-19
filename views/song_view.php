@@ -18,6 +18,7 @@
             <?php if ($songDetails): ?>
                 <h1><?php echo htmlspecialchars($songDetails['song_title']); ?></h1>
             </div>
+            <br><br>
             <div class="sub-container">
                 <p><strong>Artist:</strong> <a href="index.php?action=artist_view&artist_id=<?php echo $songDetails['artist_id']; ?>"><?php echo htmlspecialchars($songDetails['artist_name']); ?></a></p>
                 <p><strong>Album:</strong> <a href="index.php?action=album_view&album_id=<?php echo $songDetails['album_id']; ?>"><?php echo htmlspecialchars($songDetails['album_title']); ?></a></p>

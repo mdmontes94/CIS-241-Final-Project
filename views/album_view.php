@@ -18,6 +18,7 @@
             <?php if ($album): ?>
                 <h1><?php echo htmlspecialchars($album['album_title']); ?></h1>
             </div>
+            <br><br>
             <div class="sub-container">
                 <h3>Songs</h3>
                 <?php foreach ($songs as $song) : ?>
