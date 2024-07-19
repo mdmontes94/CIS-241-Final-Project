@@ -12,7 +12,6 @@
         <nav class="navMenu">
             <a href="index.php">Home Page</a>
             <a href="index.php?action=list"><b>Song List</b></a>
-            <a href="index.php?action=artist_view">Artists</a>
             <a href="index.php?action=add_song"><b>Add Song</b></a>
             <a href="index.php?action=add_artist">Add Artist</a>          
         </nav>
