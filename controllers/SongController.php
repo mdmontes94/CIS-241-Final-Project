@@ -6,6 +6,8 @@ require_once('./models/ArtistModel.php');
 require_once('./models/GenreModel.php');
 
 class SongController {
+    
+    // The conrtoller is constructed using the SongModel, AlbumModel, ArtistModel and GenreModel.
     private $songModel;
     private $albumModel;
     private $artistModel;
@@ -18,36 +20,51 @@ class SongController {
         $this->genreModel = $genreModel;
     }
 
+    // The following function uses the getAllSongs function from the SongModel, 
+    // and returns an array in order to be used for the site.
     public function getAllSongs() {
        $songs = $this->songModel->getAllSongs(); 
 
        return $songs;
     }
 
+    // The following function uses the getSongList() function from the SongModel.
+    // and returns an array in order for the songs to be listed in list_view.php.
     public function getSongList() {
         $songList = $this->songModel->getSongList();
 
         return $songList;
     }
 
+    // The following function uses the getAllArtists() function from the ArtistModel in order to 
+    // help with the filtering functions in list_view.php.
     public function getAllArtists() {
         $artists = $this->artistModel->getAllArtists();
 
         return $artists;
     }
 
+    // The following function uses the getAllAlbums() function from the AlbumModel in order to 
+    // help with the filtering functions in list_view.php.
     public function getAllAlbums() {
         $albums = $this->albumModel->getAllAlbums();
 
         return $albums;
     }
 
+    // The following function uses the getAllGenres() function from the ArtistModel in order to 
+    // help with the filtering functions in list_view.php.
     public function getAllGenres() {
         $genres = $this->genreModel->getAllGenres();
 
         return $genres; 
     }
 
+    /* The following function uses the addSong() function from the SongModel in order to
+       successfully add a song to the database. It sets the variables to the user input via
+       the filter_input function using the post method. Depending on if it is successful,
+       the page will reload with either a success/error message.
+    */
     public function addSong() {
         $song_title = filter_input(INPUT_POST, 'song_title');
         $artist_id = filter_input(INPUT_POST, 'artist_id', FILTER_VALIDATE_INT);
@@ -67,6 +84,8 @@ class SongController {
         }
     }
 
+    // The following function implements the getSongByID function from the SongModel and returns that result
+    // to the song_view.php page if it is successful. If not, it returns "false" and an error message.
     public function getSongByID($song_id) {
         if ($song_id) {
             $song = $this->songModel->getSongById($song_id);
