@@ -10,24 +10,18 @@
         <nav class="navMenu">
             <a href="index.php">Home Page</a>
             <a href="index.php?action=list">Song List</a>
-            <a href="index.php?action=artist_view">Artists</a>
             <a href="index.php?action=add_song">Add Song</a>
             <a href="index.php?action=add_artist">Add Artist</a>
         </nav>
         <div class="container">
-            <?php if ($artist): ?>
-                <h1>Artist: <?php echo htmlspecialchars($artist['artist_name']); ?></h1>
-                <h3>Albums</h3>
-                <?php foreach ($albums as $album) : ?>
-                    <p><a href="index.php?action=album_view&album_id=<?php echo $album['album_id']; ?>"><?php echo htmlspecialchars($album['album_title']); ?></a></p>
-                <?php endforeach; ?>
+            <?php if ($album): ?>
+                <h1>Album: <?php echo htmlspecialchars($album['album_title']); ?></h1>
                 <h3>Songs</h3>
                 <?php foreach ($songs as $song) : ?>
                     <p><a href="index.php?action=song_view&song_id=<?php echo $song['song_id']; ?>"><?php echo htmlspecialchars($song['song_title']); ?></a></p>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Artist not found.</p>
+                <p>Album not found.</p>
             <?php endif; ?>
         </div>
-    </body>
-</html>
+    </body

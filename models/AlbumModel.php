@@ -63,6 +63,32 @@ class AlbumModel {
         }
     }
 
+    public function getSpecifiedAlbum($album_id) {
+        $artistQuery = 'SELECT album_title 
+                        FROM albums
+                        WHERE album_id = :album_id';
+        $statement = $this->conn->prepare($artistQuery);
+        $statement->bindValue(':album_id', $album_id);
+        $statement->execute();
+        $success = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $success;
+    }
+
+    public function getSongsByAlbum($album_id) {
+        $songsQuery = 'SELECT song_id, song_title
+                       FROM songs_view
+                       WHERE album_id = :album_id';
+        $statement = $this->conn->prepare($songsQuery);
+        $statement->bindValue(':album_id', $album_id);
+        $statement->execute();
+        $success = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $success;
+    }
+
 }
 
 ?>

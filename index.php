@@ -43,6 +43,19 @@ switch ($action) {
         include('views/artist_view.php');
         break;
 
+    case 'album_view':
+        require_once('controllers/AlbumController.php');
+        $controller = new AlbumController($albumModel);
+        $album_id = $_GET['album_id'] ?? '';
+
+        if($album_id) {
+            $album = $controller->getSpecifiedAlbum($album_id);
+            $songs = $controller->getSongsByAlbum($album_id);
+        }
+
+        include('views/album_view.php');
+        break;
+
     case 'song_view':
         require_once('controllers/SongController.php');
         $controller = new SongController($songModel, $albumModel, $artistModel, $genreModel);

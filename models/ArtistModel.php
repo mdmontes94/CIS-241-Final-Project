@@ -77,7 +77,7 @@ class ArtistModel {
     }
 
     public function getAlbumsByArtist($artist_id) {
-        $albumQuery = 'SELECT DISTINCT album_title
+        $albumQuery = 'SELECT DISTINCT album_title, album_id
                        FROM songs_view
                        WHERE artist_id = :artist_id';
         $statement = $this->conn->prepare($albumQuery);
