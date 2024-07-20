@@ -27,10 +27,16 @@
             </div>
             <br>
             <div class="sub-container">
-                <h3>Songs</h3>
-                <?php foreach ($songs as $song) : ?>
-                    <p><a href="index.php?action=song_view&song_id=<?php echo $song['song_id']; ?>"><?php echo htmlspecialchars($song['song_title']); ?></a></p>
-                <?php endforeach; ?>
+                <table class="songs">
+                    <tr>
+                        <th>Songs</th>
+                    </tr>
+                    <?php foreach ($songs as $song) : ?>
+                    <tr>
+                        <td><a href="index.php?action=song_view&song_id=<?php echo $song['song_id']; ?>"><?php echo htmlspecialchars($song['song_title']); ?></a></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </table>
             </div>
             <?php else: ?>
                 <p>Artist not found.</p>

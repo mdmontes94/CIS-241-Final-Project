@@ -49,8 +49,10 @@ body {
 .songs {
     border: 8px solid #EE1C25;
     border-collapse: collapse;
-    width: 95%;
+    width: 75%;
     margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 th {
