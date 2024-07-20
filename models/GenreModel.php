@@ -40,8 +40,8 @@ class GenreModel {
         }
     }
 
-    // The following function deletes an album from the albums table given the argument of album_id. Once that is 
-    // provided, the function will run the query to delete the album from the albums table.
+    // The following function deletes an genre from the genres table given the argument of genre_id. Once that is 
+    // provided, the function will run the query to delete the genre from the genres table.
     public function deleteGenre($genre_id) {
         if($genre_id !== false) {
             $deleteQuery = 'DELETE FROM genres
@@ -55,7 +55,7 @@ class GenreModel {
         }
     }
 
-    // The following function updates an album in the albums table needing the arguments of genre_id and
+    // The following function updates an genre in the genres table needing the arguments of genre_id and
     // genre_name in order for the function to operate. If those variables return the boolean of true,
     // then the function will run the query updating the genre name.
     public function updateGenre($genre_id, $genre_name) {
