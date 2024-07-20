@@ -56,7 +56,7 @@ class AlbumModel {
     }
 
     // The following function updates an album in the albums table needing the arguments of album_id and
-    // album_title in order for the function to operate. If those variables reurn the boolean of true,
+    // album_title in order for the function to operate. If those variables return the boolean of true,
     // then the function will run the query updating the album title.
     public function updateAlbum($album_id, $album_title) {
         if($album_id !== false && $album_title !== false) {
