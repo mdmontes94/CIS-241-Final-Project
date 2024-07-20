@@ -15,6 +15,14 @@
         </nav>
         <div class="container">
             <h1>It's a Mario's Music Manager!</h1>
+            <h2>You can do things from:</h2>
+            <ul>
+                <li>Viewing all of the songs in a list</li>
+                <li>Filtering that list by artist, genre, or album</li>
+                <li>Viewing what songs and albums are under specific artists</li>
+                <li>Getting specific song details</li>
+                <li>And even adding songs and artists to the list!</li>
+            </ul>
             <img id="conductor" src="./assets/mario_conductor.png" alt="Mario conducting" />
             <img id="sax" src="./assets/mario_sax.png" alt="Mario playing saxophone" />
             <img id="keyboard" src="./assets/musical_mario.png" alt="Mario playing keyboard" />
