@@ -14,6 +14,7 @@
         <a href="index.php?action=add_artist">Add Artist</a>      
     </nav>
     <div class="container">
+        <h1>Add a Song to the Database Here!</h1>
         <div class="sub-container">
             <?php if (isset($_GET['status'])): ?>
                 <?php if ($_GET['status'] === 'success'): ?>
@@ -60,11 +61,12 @@
                 
                 <label for="year_released">Year Released:</label>
                 <input type="text" name="year_released" id="year_released" />
-                <br>
+                <br><br>
 
                 <button type="submit">Add Song</button>
             </form>
         </div>
+        <br><br>
         <div class="sub-container">
             <p>If the artist for the song you are adding is not in the list of available artists, please add them by going to the 
             <a href="index.php?action=add_artist">Add Artist</a> page as you cannot add a song without the proper artist.</p>

@@ -14,6 +14,7 @@
         <a href="index.php?action=add_artist"><b>Add Artist</b></a>  
     </nav>
     <div class="container">
+        <h1>Add an Artist to the Database Here!</h1>
         <div class="sub-container" id="add-artist-form">
             <?php if (isset($_GET['status'])): ?>
                 <?php if ($_GET['status'] === 'success'): ?>
@@ -25,7 +26,7 @@
             <form action="index.php?action=add_artist" method="post">
                 <label for="artist_name">Artist to Add:</label>
                 <input type="text" name="artist_name" id="artist_name" required />
-                <br>
+                <br><br>
                 <button type="submit">Add Artist</button>
             </form>
         </div>

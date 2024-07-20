@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const albumForm = document.getElementById('albumForm');
     const genreForm = document.getElementById('genreForm');
     const songTableBody = document.getElementById('songTableBody');
-    const songList = window.songListData; // Assume songListData is set in the HTML or loaded via AJAX
 
     artistForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -22,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function filterSongs(artistValue, albumValue, genreValue) {
         Array.from(songTableBody.rows).forEach(function(row) {
-            const artist = row.cells[1].textContent;
-            const album = row.cells[2].textContent;
-            const genre = row.cells[3].textContent;
+            const artist = row.getAttribute('data-artist');
+            const album = row.getAttribute('data-album');
+            const genre = row.getAttribute('data-genre');
 
             const showArtist = artistValue === '' || artist === artistValue;
             const showAlbum = albumValue === '' || album === albumValue;
@@ -34,3 +33,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+

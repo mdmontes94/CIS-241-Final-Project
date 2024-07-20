@@ -46,26 +46,14 @@ body {
     margin-left: 50px;
 }
 
-.songs {
-    border: 8px #894C2F;
-    border-collapse: collapse;
-    width: 95%;
-    margin: auto;
-}
-
-th {
-    border: 3px dashed black;
-    padding: 10px; 
-}
-
-td {
-    border: 3px dashed black;
-    padding: 10px;
-    border-top: 3px solid black;
-}   
-
 h1 {
     color: #333;
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

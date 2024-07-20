@@ -20,7 +20,7 @@
                 <h1>Filter Options</h1>
                 <form id="artistForm">
                     <label>Filter by Artist:</label>
-                    <select id="artistSelect">
+                    <select id="artistSelect" name="artistSelect">
                         <option value="">All Artists</option>
                         <?php foreach($artists as $artist) : ?>
                         <option value="<?php echo $artist['artist_name']; ?>"><?php echo $artist['artist_name']; ?></option>
@@ -31,7 +31,7 @@
                 <br>
                 <form id="albumForm">
                     <label>Filter by Album:</label>
-                    <select id="albumSelect">
+                    <select id="albumSelect" name="albumSelect">
                         <option value="">All Albums</option>
                         <?php foreach($albums as $album) : ?>
                         <option value="<?php echo $album['album_title']; ?>"><?php echo $album['album_title']; ?></option>
@@ -42,7 +42,7 @@
                 <br>
                 <form id="genreForm">
                     <label>Filter by Genre:</label>
-                    <select id="genreSelect">
+                    <select id="genreSelect" name="genreSelect">
                         <option value="">All Genres</option>
                         <?php foreach($genres as $genre) : ?>
                         <option value="<?php echo $genre['genre_name']; ?>"><?php echo $genre['genre_name']; ?></option>
@@ -62,7 +62,7 @@
                     </thead>
                     <tbody id="songTableBody">
                         <?php foreach ($songList as $song) : ?>
-                        <tr>
+                        <tr data-artist="<?php echo $song['artist_name']; ?>" data-album="<?php echo $song['album_title']; ?>" data-genre="<?php echo $song['genre_name']; ?>">
                             <td><a href="index.php?action=song_view&song_id=<?php echo $song['song_id']; ?>"><?php echo $song['song_title']; ?></a></td>
                         </tr>
                         <?php endforeach; ?>
