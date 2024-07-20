@@ -23,6 +23,7 @@
                 <li>Getting specific song details</li>
                 <li>And even adding songs and artists to the list!</li>
             </ul>
+            <h1>So have fun with the Musical World of a me, Mario!</h1>
             <img id="conductor" src="./assets/mario_conductor.png" alt="Mario conducting" />
             <img id="sax" src="./assets/mario_sax.png" alt="Mario playing saxophone" />
             <img id="keyboard" src="./assets/musical_mario.png" alt="Mario playing keyboard" />
